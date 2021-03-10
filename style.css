@@ -1,0 +1,51 @@
+body {
+	background: #FFF7BF;
+}
+
+#message_ul {
+	background: #1CADFF;
+	width: 350px;
+	list-style-type: none;
+	border: 1px solid;
+}
+
+#message_table {
+	background: #1CADFF;
+	width: 500px;
+	border: 1px solid;
+}
+
+#message_table td {
+	padding: 5px;
+	margin: 5px;
+}
+
+.sender_cell {
+	background: #FDFFB6;
+	width: 50px;
+}
+
+.code_cell {
+	background: #FF7F7F;
+	width:50px;
+}
+
+.message_cell {
+	background: #8DFFBA;
+}
+
+li {
+	background: #93D0FF;
+	padding: 5px;
+	margin: 5px;
+}
+
+#message_input {
+	width: 300px;
+	height: 100px;
+}
+
+#send_button {
+	padding: 5px;
+	margin: 5px;
+}

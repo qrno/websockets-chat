@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="./style.css">
+	<title>WebSockets</title>
+</head>
+<body>
+	<h1>WebSockets Chat</h1>
+	<h2>Messages:</h2>
+
+	<table id="message_table">
+		<tr>
+			<td class="sender_cell">SERVER</td>
+			<td class="code_cell">00000000</td>
+			<td class="message_cell">Chat Starts Here</td>
+		</tr>
+	</table>
+	
+	<h2>Input</h2>
+	<div>
+		<table>
+			<tr>
+				<td><label for="username">Username</label></td>
+				<td><input type="text" id="username_input" name="username"></td>
+			</tr>
+			<tr>
+				<td><label for="code">Code</label></td>
+				<td><input type="text" id="code_input" name="code"></td>
+			</tr>
+			<tr>
+				<td>Message</td>
+				<td><textarea id="message_input"></textarea></td>
+			</tr>
+		</table>
+		<button id="send_button">Send</button>
+	</div>
+
+	<script src="./client.js"></script>
+</body>
+</html>
