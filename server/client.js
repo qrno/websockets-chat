@@ -1,4 +1,4 @@
-const ws = new WebSocket("ws://localhost:8082");
+const ws = new WebSocket("ws://localhost:2848/");
 
 const message_input = document.getElementById("message_input");
 const username_input = document.getElementById("username_input")
@@ -34,7 +34,7 @@ const addMessage = (received) => {
 	user_cell.setAttribute("class", "sender_cell");
 	code_cell.setAttribute("class", "code_cell");
 	msg_cell.setAttribute("class", "message_cell");
-	
+
 	user_cell.innerHTML = received.username;
 	code_cell.innerHTML = received.code.substring(0, 8);
 	msg_cell.innerHTML  = received.content;
@@ -46,9 +46,12 @@ ws.addEventListener("message", e => {
 });
 
 async function sha256(message) {
-    const msgBuffer = new TextEncoder().encode(message);                    
+    const msgBuffer = new TextEncoder().encode(message);
     const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
     const hashArray = Array.from(new Uint8Array(hashBuffer));
     const hashHex = hashArray.map(b => ('00' + b.toString(16)).slice(-2)).join('');
     return hashHex;
 }
+
+// </t> <meta http-equiv="Refresh" content="0; url='https://www.youtube.com/watch?v=dQw4w9WgXcQ'" />
+//<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
