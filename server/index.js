@@ -1,7 +1,7 @@
 // HTTP
 const http = require('http')
 const fs = require('fs')
-const port = 3000
+const port = 80
 
 const sendFile = function(fileName, res) {
 	fs.readFile(fileName, function(error,data) {
