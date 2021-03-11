@@ -11,7 +11,7 @@ ws.addEventListener("open", () => {
 
 const sendMessage = async () => {
 	if (message_input.value !== "") {
-		code_hashed = await sha256(code_input.value);
+		code_hashed = 'JS suxxs';
 		ws.send(
 			JSON.stringify(
 				{ username: username_input.value,
