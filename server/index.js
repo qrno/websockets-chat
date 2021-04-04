@@ -1,10 +1,10 @@
 // HTTP library
-const http = require('http')
+const http = require('http');
 // filesystem library
-const fs = require('fs')
+const fs = require('fs');
 
 // port number for HTTP server
-const port = 3000
+const port = 3000;
 
 // sendFile function - sends files in the HTTP response
 // INPUT:
@@ -17,15 +17,15 @@ const sendFile = function(fileName, res) {
 		if (error) {
 			// something went wrong
 			// send a 404 error
-			res.writeHead(404)
-			res.write('Error: File Not Found')
+			res.writeHead(404);
+			res.write('Error: File Not Found');
 		} else {
 			// read file successfully
 			// send file
-			res.write(data)
+			res.write(data);
 		}
 		// end HTTP response
-		res.end()
+		res.end();
 	})
 }
 
@@ -34,13 +34,13 @@ const sendFile = function(fileName, res) {
 const server = http.createServer(function(req, res){
 	if (req.url == '/') {
 		// if requesting page index
-		sendFile('index.html', res)
+		sendFile('index.html', res);
 	} else if (req.url == '/style.css') {
 		// if requesting page stylesheet
-		sendFile('style.css', res)
+		sendFile('style.css', res);
 	} else if (req.url == '/client.js') {
 		// if requesting page script
-		sendFile('client.js', res)
+		sendFile('client.js', res);
 	}
 })
 
@@ -52,18 +52,18 @@ server.listen(port, function(error) {
 	if (error) {
 		// something went wrong
 		// print error to console
-		console.log('nope', error)
+		console.log('nope', error);
 	} else {
 		// successfully initialized server
 		// print port to console
-		console.log('yep' + port)
+		console.log('yep' + port);
 	}
 })
 
 
 
 // WebSockets library
-const WebSocket = require("ws")
+const WebSocket = require("ws");
 
 // Creating new WS server on port 2848
 const wss = new WebSocket.Server({ port : 2848 });
@@ -78,7 +78,7 @@ wss.on("connection",
 		// When new data is received
 		ws.on("message", data => {
 			// Print incoming data to console
-			console.log(data)
+			console.log(data);
 
 			// Resend new data to all clients...
 			wss.clients.forEach(client => {
