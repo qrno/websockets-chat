@@ -28,16 +28,16 @@ const addMessage = (received) => {
 	const msg_row = msg_table.insertRow();
 
 	const user_cell = msg_row.insertCell();
-	const code_cell = msg_row.insertCell()
+	const code_cell = msg_row.insertCell();
 	const msg_cell  = msg_row.insertCell();
 
 	user_cell.setAttribute("class", "sender_cell");
 	code_cell.setAttribute("class", "code_cell");
 	msg_cell.setAttribute("class", "message_cell");
 
-	user_cell.innerHTML = received.username;
-	code_cell.innerHTML = received.code.substring(0, 8);
-	msg_cell.innerHTML  = received.content;
+	user_cell.innerText = received.username;
+	code_cell.innerText = received.code.substring(0, 8);
+	msg_cell.innerText  = received.content;
 }
 ws.addEventListener("message", e => {
 	console.log("Received ", e.data);
